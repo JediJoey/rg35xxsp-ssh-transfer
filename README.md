@@ -18,6 +18,13 @@ Fork from https://github.com/xgbox/rg35xxsp-ssh-samba/ that uses scp to transfer
 - `.gbc` -> `GBC`
 - `.nds` -> `NDS`
 
+## Prerequisites
+
+- Follow the instructions from https://github.com/xgbox/rg35xxsp-ssh-samba/
+- ssh_enable.sh should be in the Roms\APPS directory of the Anbernic
+- run the ssh_enable.sh from the Anbernic
+- Connect the Anbernic to same LAN and subnet of the PC you are transferring the files from
+
 ## Installation
 
 Clone the repository and navigate to the project directory:
@@ -41,9 +48,11 @@ python3 tools/transfer.py <remote_host> -u <username>
 
 Replace <remote_host> with the IP address of the remote host and <username> with your SSH username (default is root).
 
-You will be prompted to enter your SSH password and to select files using a file dialog.
+You will be prompted to enter your SSH password (root is default) and to select files using a file dialog.
 
 ### Example
 ```sh
 python3 tools/transfer.py 192.168.1.88 -u root
 ```
+
+You may need to restart the rg35xxsp after transferring the file for it to appear.
