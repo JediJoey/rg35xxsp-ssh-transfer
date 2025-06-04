@@ -78,6 +78,8 @@ def main():
                 continue
 
             remote_path = os.path.join(REMOTE_BASE_DIR, destination_dir)
+            # Change \ in remote_path to / for compatibility
+            remote_path = remote_path.replace('\\', '/')
             print(f"Transferring {file_path} to {remote_path}")
 
             # Ensure the remote directory exists
